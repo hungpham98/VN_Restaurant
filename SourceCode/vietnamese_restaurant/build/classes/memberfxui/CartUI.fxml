@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" stylesheets="@../fxui/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberfxui.CartUIController">
+   <top>
+      <Pane prefHeight="60.0" prefWidth="900.0" styleClass="topbar" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lbAccount" layoutX="763.0" layoutY="19.0" prefHeight="23.0" prefWidth="105.0" text="Account" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="20" />
+               </graphic>
+            </Label>
+            <Label layoutX="348.0" layoutY="16.0" text="SHOPPING CART" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnBack" layoutX="28.0" layoutY="14.0" onAction="#btnBackClick" prefHeight="32.0" prefWidth="37.0" text=" " textAlignment="CENTER">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="24" />
+               </graphic>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane fx:id="anchor" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="50.0" layoutY="14.0" prefHeight="52.0" prefWidth="800.0" styleClass="shopping_cart_bg">
+               <children>
+                  <Label layoutX="455.0" layoutY="18.0" text="Price" />
+                  <Label layoutX="610.0" layoutY="18.0" text="Amount" />
+                  <Label layoutX="60.0" layoutY="18.0" text="Product" />
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" layoutX="50.0" layoutY="75.0" prefHeight="447.0" prefWidth="800.0">
+               <children>
+                  <ScrollPane fx:id="scCartItems" prefHeight="458.0" prefWidth="800.0">
+                     <content>
+                        <GridPane fx:id="gd" prefHeight="19.0" prefWidth="22.0">
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <columnConstraints>
+                              <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <Pane layoutX="50.0" layoutY="532.0" prefHeight="84.0" prefWidth="800.0" styleClass="shopping_cart_bg">
+               <children>
+                  <JFXCheckBox fx:id="cbAll" layoutX="44.0" layoutY="33.0" prefHeight="18.0" prefWidth="89.0" text="All product" visible="false" />
+                  <Label layoutX="492.0" layoutY="34.0" prefHeight="17.0" prefWidth="63.0" text="Total Price:" />
+                  <Label fx:id="lbTotalPrice" layoutX="560.0" layoutY="24.0" prefHeight="37.0" prefWidth="120.0" text="0đ" textFill="#f44234">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnSubmit" layoutX="691.0" layoutY="28.0" onAction="#btnSubmitClick" styleClass="btn_login" text="Send Order" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <VBox fx:id="acVbox" layoutX="763.0" layoutY="-14.0" mouseTransparent="true" prefHeight="56.0" prefWidth="112.0" style="-fx-background-color: #ffffff; -fx-border-color: #808080;" visible="false">
+               <children>
+                  <JFXButton fx:id="editacBtn" onAction="#editacBtnClick" prefHeight="28.0" prefWidth="112.0" style="-fx-background-color: #ffffff;" text="Edit " />
+                  <JFXButton fx:id="logoutacBtn" onAction="#logoutacBtnClick" prefHeight="28.0" prefWidth="114.0" text="Logout" />
+               </children>
+            </VBox>
+            <AnchorPane fx:id="acEmpty" layoutX="181.0" layoutY="85.0" mouseTransparent="true" prefHeight="429.0" prefWidth="539.0" visible="false">
+               <children>
+                  <Label layoutX="192.0" layoutY="201.0" text="Your cart is empty">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="129.0" fitWidth="237.0" layoutX="151.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/empty_cart_retina.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

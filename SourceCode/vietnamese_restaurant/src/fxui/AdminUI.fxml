@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxui.AdminUIController">
+   <top>
+      <MenuBar prefHeight="19.0" prefWidth="749.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="375.0" prefWidth="96.0" style="-fx-background-color: #51b4e1;">
+               <children>
+                  <FontAwesomeIconView fill="#eeeee4" glyphName="USER" size="60" textAlignment="CENTER" wrappingWidth="100.4285717010498">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </FontAwesomeIconView>
+                  <JFXButton disable="true" prefHeight="34.0" prefWidth="101.0" styleClass="nav_selected" text="Admin" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnProduct" layoutX="10.0" layoutY="72.0" onAction="#btnProductClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Product" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnCategory" layoutX="10.0" layoutY="106.0" onAction="#btnCategoryClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Category" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnMember" alignment="CENTER" onAction="#btnMemberClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Member" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnOrder" alignment="CENTER" layoutX="10.0" layoutY="214.0" onAction="#btnOrderClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Order" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnLogout" alignment="CENTER" layoutX="10.0" layoutY="214.0" onAction="#btnLogoutClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Logout" textFill="#eeeee4" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="799.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="37.0" layoutY="24.0" prefHeight="35.0" prefWidth="186.0" text="Admin Manager">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="39.0" layoutY="68.0" prefHeight="2.0" prefWidth="717.0" />
+            <JFXTreeTableView fx:id="tvAdmin" layoutX="37.0" layoutY="268.0" prefHeight="367.0" prefWidth="720.0" />
+            <Pane layoutX="37.0" layoutY="99.0" prefHeight="157.0" prefWidth="717.0" styleClass="form_background">
+               <children>
+                  <JFXTextField fx:id="txtUsername" labelFloat="true" layoutX="27.0" layoutY="22.0" prefHeight="25.0" prefWidth="160.0" promptText="Username" />
+                  <JFXTextField fx:id="txtName" labelFloat="true" layoutX="224.0" layoutY="22.0" prefHeight="25.0" prefWidth="160.0" promptText="Admin name" />
+                  <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="224.0" layoutY="88.0" prefWidth="160.0" promptText="Email" />
+                  <JFXDatePicker fx:id="dateDob" layoutX="427.0" layoutY="22.0" prefHeight="25.0" prefWidth="193.0" promptText="Date Of Birth" />
+                  <JFXPasswordField fx:id="pwdPassword" labelFloat="true" layoutX="27.0" layoutY="88.0" prefWidth="160.0" promptText="Password" />
+                  <JFXButton fx:id="btnInsertAdmin" layoutX="638.0" layoutY="10.0" onAction="#btnInsertAdminClick" prefWidth="65.0" styleClass="btn_create_update" text="New" />
+                  <JFXButton fx:id="btnDeleteAdmin" layoutX="638.0" layoutY="83.0" onAction="#btnDeleteAdminClick" prefWidth="65.0" styleClass="btn_detete" text="Delete" />
+                  <Label fx:id="lbMessage" layoutX="427.0" layoutY="83.0" prefHeight="36.0" prefWidth="193.0" textOverrun="LEADING_WORD_ELLIPSIS" />
+                  <JFXButton fx:id="btnUpdateAdmin" layoutX="638.0" layoutY="47.0" onAction="#btnUpdateAdminClick" prefWidth="65.0" styleClass="btn_create_update" text="Update" />
+                  <JFXButton fx:id="btnSubmit" layoutX="638.0" layoutY="119.0" onAction="#btnSubmitClick" prefWidth="65.0" styleClass="btn_submit" text="Submit" />
+               </children>
+            </Pane>
+            <JFXButton buttonType="RAISED" defaultButton="true" layoutX="757.0" layoutY="268.0" onAction="#btnRefeshClick" prefHeight="25.0" prefWidth="25.0" style="-fx-border-color: #a6a6a6;" text=" " visible="false">
+               <graphic>
+                  <FontAwesomeIconView glyphName="REFRESH" wrappingWidth="12.285714149475098" />
+               </graphic>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></JFXButton>
+         </children></AnchorPane>
+   </center>
+</BorderPane>

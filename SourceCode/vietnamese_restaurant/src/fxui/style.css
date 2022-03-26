@@ -1,0 +1,108 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 3, 2021, 8:47:39 AM
+    Author     : pc
+*/
+.login_button{
+    -fx-background-color: #1e81b0;
+}
+.signup_button{
+    -fx-background-color: #1e81b0;
+}
+.background{
+    -fx-background-color: #eeeee4;
+}
+
+.nav{
+    -fx-background-color: #1e81b0;
+    -fx-background-radius: 0px;
+}
+
+.nav_selected{
+    -fx-background-color: #25a1da;
+    -fx-background-radius: 0px;
+    -fx-border-color: #737373;
+}
+
+.form_background{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #808080;
+    -fx-border-radius: 5px;
+}
+
+.btn_create_update{
+    -fx-background-color: #99ff99;
+
+}
+.jfx-hamburger StackPane {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 7px;
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+}
+.btn_detete{
+    -fx-background-color: #ff3333;
+}
+
+.btn_submit{
+    -fx-background-color: #80aaff;
+}
+.drawer{
+    -fx-background-color: #b71c1c;
+}
+.btn_check_user{
+    -fx-background-color: #1e81b0;
+    -fx-border-color: #0033cc;
+    -fx-border-radius: 3px;
+}
+.topbar{
+    -fx-background-color: #f44336;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0.0 , 0 );
+}
+.linear{
+    -fx-background-color: linear-gradient(to bottom left,#f66055,#f44234);
+}
+
+.btn_login{
+    -fx-background-color: #f44234;
+
+}
+
+.btn_login2{
+    -fx-background-color:  #fcd2cf;
+}
+
+.background2{
+    -fx-background-color: #c62828;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );
+}
+
+.item{
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 5px;
+    -fx-border-color: #808080;
+}
+
+.btn_cart{
+    -fx-background-color: #ffffff;
+}
+
+.noti{
+
+}
+.search-box{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 100;
+}
+.shopping_cart_bg{
+    -fx-border-color: #e9e9e9;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 3px;
+}
+.btn_back{
+    -fx-background-color: #f44234;
+}

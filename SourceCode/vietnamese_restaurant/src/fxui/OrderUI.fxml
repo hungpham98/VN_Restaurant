@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxui.OrderUIController">
+   <top>
+      <MenuBar prefHeight="19.0" prefWidth="749.0" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="375.0" prefWidth="96.0" style="-fx-background-color: #51b4e1;">
+               <children>
+                  <FontAwesomeIconView fill="#eeeee4" glyphName="USER" size="60" textAlignment="CENTER" wrappingWidth="100.4285717010498">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </FontAwesomeIconView>
+                  <JFXButton fx:id="btnAdmin" onAction="#btnAdminClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Admin" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnProduct" layoutX="10.0" layoutY="72.0" onAction="#btnProductClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Product" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnCategory" layoutX="10.0" layoutY="106.0" onAction="#btnCategoryClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Category" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnMember" alignment="CENTER" onAction="#btnMemberClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Member" textFill="#eeeee4" />
+                  <JFXButton alignment="CENTER" disable="true" layoutX="10.0" layoutY="214.0" prefHeight="34.0" prefWidth="101.0" styleClass="nav_selected" text="Order" textFill="#eeeee4" />
+                  <JFXButton fx:id="btnLogout" alignment="CENTER" layoutX="10.0" layoutY="214.0" onAction="#btnLogoutClick" prefHeight="34.0" prefWidth="101.0" styleClass="nav" text="Logout" textFill="#eeeee4" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTreeTableView fx:id="tvOrder" layoutX="55.0" layoutY="125.0" prefHeight="261.0" prefWidth="711.0" />
+            <JFXTreeTableView fx:id="tvOrder_detail" layoutX="55.0" layoutY="419.0" prefHeight="225.0" prefWidth="322.0" />
+            <Separator layoutX="54.0" layoutY="104.0" prefHeight="3.0" prefWidth="731.0" />
+            <Label layoutX="55.0" layoutY="31.0" text="Order Manager">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="deleteorderbtn" layoutX="704.0" layoutY="464.0" onAction="#dlorderclick" styleClass="btn_detete" stylesheets="@style.css" text="Delete" textFill="WHITE" />
+            <JFXButton fx:id="approveorder" layoutX="510.0" layoutY="464.0" onAction="#approveclck" styleClass="btn_create_update" stylesheets="@style.css" text="Approve order" textFill="WHITE" />
+            <JFXButton fx:id="cancelorder" layoutX="511.0" layoutY="507.0" onAction="#cancelclick" prefHeight="25.0" prefWidth="92.0" styleClass="btn_detete" stylesheets="@style.css" text="Cancel order" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

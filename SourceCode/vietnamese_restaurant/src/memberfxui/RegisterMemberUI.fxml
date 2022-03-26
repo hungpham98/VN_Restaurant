@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="420.0" prefWidth="450.0" stylesheets="@../fxui/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberfxui.RegisterMemberUIController">
+   <children>
+      <Label alignment="CENTER" layoutX="69.0" layoutY="17.0" prefHeight="35.0" prefWidth="314.0" text="Sign Up" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtMemName" layoutX="55.0" layoutY="89.0" prefHeight="27.0" prefWidth="158.0" promptText="Name:" />
+      <JFXTextField fx:id="txtMemAddress" layoutX="55.0" layoutY="161.0" prefHeight="27.0" prefWidth="359.0" promptText="Addresss:" />
+      <JFXTextField fx:id="txtMemPhone" layoutX="256.0" layoutY="89.0" prefHeight="27.0" prefWidth="158.0" promptText="Phone" />
+      <JFXTextField fx:id="txtMemUsername" layoutX="55.0" layoutY="285.0" prefColumnCount="50" prefHeight="27.0" prefWidth="158.0" promptText="Username" />
+      <JFXButton fx:id="btnMemSubmit" layoutX="155.0" layoutY="360.0" onAction="#btnSubmitClick" prefHeight="40.0" prefWidth="140.0" styleClass="btn_login" text="Sign In" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnMemBack" layoutX="33.0" layoutY="21.0" prefHeight="27.0" prefWidth="26.0" style="-fx-border-color: #94b8b8; -fx-border-radius: 3px;" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" />
+         </graphic>
+         <padding>
+            <Insets left="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXTextField fx:id="txtMemEmail" layoutX="55.0" layoutY="221.0" prefHeight="27.0" prefWidth="359.0" promptText="Email" />
+      <Label fx:id="lbMessage" alignment="CENTER" layoutX="56.0" layoutY="70.0" prefHeight="17.0" prefWidth="359.0" textAlignment="JUSTIFY" textFill="GREEN">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="txtMemPassword" layoutX="256.0" layoutY="285.0" prefHeight="27.0" prefWidth="158.0" promptText="Password" />
+   </children>
+</AnchorPane>
